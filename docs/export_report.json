@@ -1,0 +1,98 @@
+{
+  "tflite_fp32": {
+    "size_mb": 8.48,
+    "desktop_latency_ms": 6.33,
+    "accuracy": 0.8387858347386172,
+    "ice_recall": 0.8381720430107527,
+    "fresh_snow_recall": 0.9275,
+    "hazard_recall": 0.938676844783715,
+    "hazard_precision": 0.9568149396965374,
+    "ice_missed_as_safe": 0.08118279569892473
+  },
+  "tflite_fp16": {
+    "size_mb": 4.26,
+    "desktop_latency_ms": 6.42,
+    "accuracy": 0.837858347386172,
+    "ice_recall": 0.8306451612903226,
+    "fresh_snow_recall": 0.9245,
+    "hazard_recall": 0.9377862595419847,
+    "hazard_precision": 0.9567757009345794,
+    "ice_missed_as_safe": 0.08387096774193549,
+    "accuracy_drop_vs_fp32": 0.0009274873524451888,
+    "drop_within_target": true
+  },
+  "tflite_dynamic_int8": {
+    "size_mb": 2.39,
+    "desktop_latency_ms": 27.4,
+    "accuracy": 0.8270657672849916,
+    "ice_recall": 0.8672043010752688,
+    "fresh_snow_recall": 0.9145,
+    "hazard_recall": 0.9530534351145038,
+    "hazard_precision": 0.9453558808682484,
+    "ice_missed_as_safe": 0.0478494623655914,
+    "accuracy_drop_vs_fp32": 0.011720067453625638,
+    "drop_within_target": true
+  },
+  "tflite_int8": {
+    "size_mb": 2.59,
+    "desktop_latency_ms": 8.72,
+    "accuracy": 0.7892917369308601,
+    "ice_recall": 0.8575268817204301,
+    "fresh_snow_recall": 0.8315,
+    "hazard_recall": 0.9623409669211196,
+    "hazard_precision": 0.8878976405681418,
+    "ice_missed_as_safe": 0.03494623655913978,
+    "accuracy_drop_vs_fp32": 0.049494097807757154,
+    "drop_within_target": false
+  },
+  "app_model": "dynamic_int8",
+  "class_bias": {
+    "dry": 0.0,
+    "wet": 0.0,
+    "water": -0.15,
+    "fresh_snow": -0.3,
+    "melted_snow": 0.85,
+    "ice": -0.9
+  },
+  "app_val": {
+    "accuracy": 0.8334166666666667,
+    "ice_recall": 0.951,
+    "fresh_snow_recall": 0.959,
+    "hazard_recall": 0.9645,
+    "hazard_precision": 0.9310968987570895,
+    "ice_missed_as_safe": 0.0105
+  },
+  "app_val_biased": {
+    "accuracy": 0.84425,
+    "ice_recall": 0.9045,
+    "fresh_snow_recall": 0.967,
+    "hazard_recall": 0.96075,
+    "hazard_precision": 0.936745886654479,
+    "ice_missed_as_safe": 0.0175
+  },
+  "app_test_biased": {
+    "accuracy": 0.8320404721753795,
+    "ice_recall": 0.8112903225806452,
+    "fresh_snow_recall": 0.932,
+    "hazard_recall": 0.9470737913486005,
+    "hazard_precision": 0.9502170028082716,
+    "ice_missed_as_safe": 0.06236559139784946,
+    "targets": {
+      "accuracy": {
+        "value": 0.8320404721753795,
+        "target": 0.85,
+        "met": false
+      },
+      "ice_recall": {
+        "value": 0.8112903225806452,
+        "target": 0.85,
+        "met": false
+      },
+      "fresh_snow_recall": {
+        "value": 0.932,
+        "target": 0.85,
+        "met": true
+      }
+    }
+  }
+}

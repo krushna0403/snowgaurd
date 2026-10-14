@@ -1,0 +1,47 @@
+{
+  "args": {
+    "data_root": "/kaggle/input/datasets/cristvollerei/rscd-dataset-1million/RSCD dataset-1million/train",
+    "manifest": null,
+    "output_dir": "/kaggle/working/runs/phase1_mnv2",
+    "img_size": 224,
+    "batch_size": 64,
+    "head_epochs": 5,
+    "finetune_epochs": 15,
+    "finetune_layers": 60,
+    "lr_head": 0.001,
+    "lr_finetune": 3e-05,
+    "label_smoothing": 0.05,
+    "dropout": 0.3,
+    "max_per_class": 8000,
+    "max_eval_per_class": 2000,
+    "val_frac": 0.15,
+    "test_frac": 0.15,
+    "session_gap": 300.0,
+    "ice_weight": 1.5,
+    "weights": "imagenet",
+    "mixed_precision": true,
+    "gradcam_per_class": 3,
+    "seed": 42
+  },
+  "tensorflow": "2.20.0",
+  "model": "/kaggle/working/runs/phase1_mnv2/snowguard_mobilenetv2.keras",
+  "val_accuracy": 0.84325,
+  "test_accuracy": 0.8390387858347386,
+  "test_targets": {
+    "accuracy": {
+      "value": 0.8390387858347386,
+      "target": 0.85,
+      "met": false
+    },
+    "ice_recall": {
+      "value": 0.839247311827957,
+      "target": 0.85,
+      "met": false
+    },
+    "fresh_snow_recall": {
+      "value": 0.9265,
+      "target": 0.85,
+      "met": true
+    }
+  }
+}
