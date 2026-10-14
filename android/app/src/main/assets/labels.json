@@ -1,0 +1,45 @@
+{
+  "model": "snowguard_mnv2.tflite",
+  "quantization": "dynamic_int8",
+  "classes": [
+    "dry",
+    "wet",
+    "water",
+    "fresh_snow",
+    "melted_snow",
+    "ice"
+  ],
+  "class_bias": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "friction": {
+    "dry": 0.75,
+    "wet": 0.5,
+    "water": 0.4,
+    "fresh_snow": 0.2,
+    "melted_snow": 0.3,
+    "ice": 0.1
+  },
+  "band": {
+    "dry": "green",
+    "wet": "amber",
+    "water": "amber",
+    "fresh_snow": "red",
+    "melted_snow": "amber",
+    "ice": "red"
+  },
+  "input": {
+    "size": 224,
+    "dtype": "float32",
+    "range": [
+      0,
+      255
+    ],
+    "layout": "NHWC RGB"
+  }
+}

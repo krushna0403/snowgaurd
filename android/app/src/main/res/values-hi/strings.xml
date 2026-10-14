@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Only the spoken prompts are translated; the dashboard stays in English. -->
+    <string name="voice_ice">आगे बर्फ़ जमी है। धीरे चलें, अचानक ब्रेक न लगाएँ।</string>
+    <string name="voice_snow">सड़क पर बर्फ़ है। धीरे चलें।</string>
+    <string name="voice_slush">आगे पिघली बर्फ़ है। गति कम करें।</string>
+    <string name="voice_water">सड़क पर पानी भरा है। धीरे चलें।</string>
+    <string name="voice_black_ice">ख़तरा। ठंडी छाया में गीली सड़क है। काली बर्फ़ हो सकती है।</string>
+    <string name="voice_freeze_zone">आगे छायादार ठंडा इलाका है। बर्फ़ से सावधान रहें।</string>
+    <string name="voice_critical_prefix">ख़तरा।</string>
+    <string name="voice_freeze_ahead">%1$d मीटर आगे छायादार ठंडा इलाका है।</string>
+    <string name="voice_corner_ahead">%1$d मीटर आगे छाया में तीखा मोड़ है। धीरे चलें।</string>
+</resources>

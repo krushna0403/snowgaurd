@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "snowguard-ml"
+version = "0.1.0"
+description = "SnowGuard road-surface classifier: RSCD data pipeline, MobileNetV2 training, evaluation and Grad-CAM"
+requires-python = ">=3.10"
+dependencies = [
+    "tensorflow>=2.15",
+    "numpy",
+    "scikit-learn>=1.3",
+    "matplotlib",
+    "pillow",
+]
+
+[project.scripts]
+snowguard-train = "snowguard_ml.train:main"
+snowguard-eval = "snowguard_ml.evaluate:main"
+snowguard-gradcam = "snowguard_ml.gradcam:main"
+snowguard-export = "snowguard_ml.export:main"
+
+[tool.setuptools.packages.find]
+include = ["snowguard_ml*"]

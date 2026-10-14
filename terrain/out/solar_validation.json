@@ -1,0 +1,43 @@
+{
+  "reference": "pvlib 0.16.1 NREL SPA (apparent elevation)",
+  "sites": {
+    "Manali": {
+      "daylight_samples": 13249,
+      "max_elevation_error_deg": 0.12880378010402932,
+      "mean_elevation_error_deg": 0.013491187866316447,
+      "max_azimuth_error_deg": 0.04240645157324252,
+      "mean_azimuth_error_deg": 0.004577315510565841
+    },
+    "Keylong": {
+      "daylight_samples": 13258,
+      "max_elevation_error_deg": 0.17816131966084814,
+      "mean_elevation_error_deg": 0.01867326528084001,
+      "max_azimuth_error_deg": 0.04091312654384183,
+      "mean_azimuth_error_deg": 0.004571066781088196
+    },
+    "Sarchu": {
+      "daylight_samples": 13233,
+      "max_elevation_error_deg": 0.22835457619960114,
+      "mean_elevation_error_deg": 0.023725146632929014,
+      "max_azimuth_error_deg": 0.04019229555080983,
+      "mean_azimuth_error_deg": 0.0045745598956590736
+    },
+    "Tanglang La": {
+      "daylight_samples": 13204,
+      "max_elevation_error_deg": 0.2618497846211795,
+      "mean_elevation_error_deg": 0.02743941887676179,
+      "max_azimuth_error_deg": 0.03819368519634736,
+      "mean_azimuth_error_deg": 0.004574179062233937
+    },
+    "Leh": {
+      "daylight_samples": 13243,
+      "max_elevation_error_deg": 0.19803370398901304,
+      "mean_elevation_error_deg": 0.02080236654665658,
+      "max_azimuth_error_deg": 0.03602349904190305,
+      "mean_azimuth_error_deg": 0.00456067202095169
+    }
+  },
+  "max_elevation_error_deg": 0.2618497846211795,
+  "max_azimuth_error_deg": 0.04240645157324252,
+  "within_1_deg": true
+}

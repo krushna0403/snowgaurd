@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Snowflake: three crossing bars with small branch ticks. -->
+    <group android:pivotX="54" android:pivotY="54">
+        <path
+            android:fillColor="@color/brand_ice"
+            android:pathData="M51,30h6v48h-6z" />
+        <path
+            android:fillColor="@color/brand_ice"
+            android:pathData="M47,34l7,7l7,-7l3,3l-10,10l-10,-10z M47,74l7,-7l7,7l3,-3l-10,-10l-10,10z" />
+    </group>
+    <group android:pivotX="54" android:pivotY="54" android:rotation="60">
+        <path
+            android:fillColor="@color/brand_ice"
+            android:pathData="M51,30h6v48h-6z" />
+        <path
+            android:fillColor="@color/brand_ice"
+            android:pathData="M47,34l7,7l7,-7l3,3l-10,10l-10,-10z M47,74l7,-7l7,7l3,-3l-10,-10l-10,10z" />
+    </group>
+    <group android:pivotX="54" android:pivotY="54" android:rotation="120">
+        <path
+            android:fillColor="@color/brand_ice"
+            android:pathData="M51,30h6v48h-6z" />
+        <path
+            android:fillColor="@color/brand_ice"
+            android:pathData="M47,34l7,7l7,-7l3,3l-10,10l-10,-10z M47,74l7,-7l7,7l3,-3l-10,-10l-10,10z" />
+    </group>
+</vector>

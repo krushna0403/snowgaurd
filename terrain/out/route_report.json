@@ -1,0 +1,368 @@
+{
+  "length_km": 425.2,
+  "samples": 5671,
+  "tunnel_km": 9.38,
+  "elev_min_m": 1866,
+  "elev_max_m": 5327,
+  "km_above_3000m": 391.3,
+  "km_above_4000m": 234.2,
+  "horizon_deg_median": 14.5,
+  "horizon_deg_p95": 32.9,
+  "landmarks": [
+    {
+      "name": "Chhyal",
+      "kind": "village",
+      "offset_m": 1047.9,
+      "km": 0.0
+    },
+    {
+      "name": "Chichoga",
+      "kind": "village",
+      "offset_m": 609.6,
+      "km": 0.2
+    },
+    {
+      "name": "Siyal",
+      "kind": "village",
+      "offset_m": 342.8,
+      "km": 0.2
+    },
+    {
+      "name": "Manali",
+      "kind": "town",
+      "offset_m": 297.9,
+      "km": 0.4
+    },
+    {
+      "name": "Vashisht",
+      "kind": "village",
+      "offset_m": 293.4,
+      "km": 3.2
+    },
+    {
+      "name": "Goshal",
+      "kind": "village",
+      "offset_m": 541.3,
+      "km": 4.3
+    },
+    {
+      "name": "Bahang",
+      "kind": "village",
+      "offset_m": 66.6,
+      "km": 4.4
+    },
+    {
+      "name": "Shanag",
+      "kind": "village",
+      "offset_m": 931.6,
+      "km": 5.2
+    },
+    {
+      "name": "Barheta",
+      "kind": "village",
+      "offset_m": 508.0,
+      "km": 5.7
+    },
+    {
+      "name": "Majhach",
+      "kind": "village",
+      "offset_m": 1398.1,
+      "km": 5.8
+    },
+    {
+      "name": "Burwa",
+      "kind": "village",
+      "offset_m": 905.1,
+      "km": 6.4
+    },
+    {
+      "name": "Kulang",
+      "kind": "village",
+      "offset_m": 11.6,
+      "km": 8.3
+    },
+    {
+      "name": "Kothi",
+      "kind": "village",
+      "offset_m": 979.0,
+      "km": 9.1
+    },
+    {
+      "name": "Palchan",
+      "kind": "village",
+      "offset_m": 62.1,
+      "km": 9.8
+    },
+    {
+      "name": "Solang",
+      "kind": "village",
+      "offset_m": 114.5,
+      "km": 13.5
+    },
+    {
+      "name": "Sissu",
+      "kind": "village",
+      "offset_m": 23.6,
+      "km": 38.4
+    },
+    {
+      "name": "Yamling",
+      "kind": "village",
+      "offset_m": 261.6,
+      "km": 39.4
+    },
+    {
+      "name": "Yangla",
+      "kind": "village",
+      "offset_m": 934.8,
+      "km": 51.5
+    },
+    {
+      "name": "Tiling",
+      "kind": "village",
+      "offset_m": 505.0,
+      "km": 51.8
+    },
+    {
+      "name": "Gondhla",
+      "kind": "village",
+      "offset_m": 92.9,
+      "km": 53.0
+    },
+    {
+      "name": "Muling",
+      "kind": "village",
+      "offset_m": 594.7,
+      "km": 57.8
+    },
+    {
+      "name": "Gushal",
+      "kind": "village",
+      "offset_m": 637.5,
+      "km": 62.2
+    },
+    {
+      "name": "Tandi",
+      "kind": "village",
+      "offset_m": 721.9,
+      "km": 62.5
+    },
+    {
+      "name": "Kardang",
+      "kind": "village",
+      "offset_m": 700.3,
+      "km": 69.2
+    },
+    {
+      "name": "Keylang",
+      "kind": "town",
+      "offset_m": 31.3,
+      "km": 70.0
+    },
+    {
+      "name": "Grimus",
+      "kind": "village",
+      "offset_m": 704.9,
+      "km": 71.6
+    },
+    {
+      "name": "Stingri",
+      "kind": "village",
+      "offset_m": 48.4,
+      "km": 76.0
+    },
+    {
+      "name": "Kolong",
+      "kind": "village",
+      "offset_m": 139.0,
+      "km": 85.3
+    },
+    {
+      "name": "Kead",
+      "kind": "village",
+      "offset_m": 371.8,
+      "km": 85.5
+    },
+    {
+      "name": "Sarang",
+      "kind": "village",
+      "offset_m": 485.3,
+      "km": 86.0
+    },
+    {
+      "name": "Khangsar",
+      "kind": "village",
+      "offset_m": 384.0,
+      "km": 86.8
+    },
+    {
+      "name": "Srangbar",
+      "kind": "village",
+      "offset_m": 350.9,
+      "km": 87.4
+    },
+    {
+      "name": "Gemur",
+      "kind": "village",
+      "offset_m": 35.2,
+      "km": 87.9
+    },
+    {
+      "name": "Jispa",
+      "kind": "village",
+      "offset_m": 226.9,
+      "km": 92.0
+    },
+    {
+      "name": "Darcha",
+      "kind": "village",
+      "offset_m": 684.7,
+      "km": 103.9
+    },
+    {
+      "name": "Patseo",
+      "kind": "village",
+      "offset_m": 36.5,
+      "km": 114.8
+    },
+    {
+      "name": "Baralacha Pass",
+      "kind": "pass",
+      "offset_m": 13.7,
+      "km": 145.0
+    },
+    {
+      "name": "Paralatse La North",
+      "kind": "pass",
+      "offset_m": 35.3,
+      "km": 146.3
+    },
+    {
+      "name": "Nakee La",
+      "kind": "pass",
+      "offset_m": 23.8,
+      "km": 219.2
+    },
+    {
+      "name": "Lachalung La",
+      "kind": "pass",
+      "offset_m": 21.1,
+      "km": 230.4
+    },
+    {
+      "name": "Pang La",
+      "kind": "pass",
+      "offset_m": 3.2,
+      "km": 257.6
+    },
+    {
+      "name": "Tanglang La",
+      "kind": "pass",
+      "offset_m": 8.3,
+      "km": 317.8
+    },
+    {
+      "name": "Sasoma",
+      "kind": "village",
+      "offset_m": 89.7,
+      "km": 350.8
+    },
+    {
+      "name": "Gya",
+      "kind": "village",
+      "offset_m": 175.9,
+      "km": 352.7
+    },
+    {
+      "name": "Miru",
+      "kind": "village",
+      "offset_m": 16.7,
+      "km": 364.4
+    },
+    {
+      "name": "Upshi",
+      "kind": "village",
+      "offset_m": 17.7,
+      "km": 378.5
+    },
+    {
+      "name": "Arpa",
+      "kind": "village",
+      "offset_m": 524.9,
+      "km": 385.9
+    },
+    {
+      "name": "Martselang",
+      "kind": "village",
+      "offset_m": 906.7,
+      "km": 390.3
+    },
+    {
+      "name": "Stakna",
+      "kind": "village",
+      "offset_m": 305.6,
+      "km": 403.8
+    },
+    {
+      "name": "Yuluk",
+      "kind": "village",
+      "offset_m": 52.1,
+      "km": 406.4
+    },
+    {
+      "name": "Tanglakpurna",
+      "kind": "village",
+      "offset_m": 1253.3,
+      "km": 406.4
+    },
+    {
+      "name": "Ranbirpura",
+      "kind": "village",
+      "offset_m": 1404.1,
+      "km": 406.5
+    },
+    {
+      "name": "Chushot Gongma",
+      "kind": "village",
+      "offset_m": 201.7,
+      "km": 409.0
+    },
+    {
+      "name": "Chushot Shamma",
+      "kind": "village",
+      "offset_m": 139.3,
+      "km": 411.2
+    },
+    {
+      "name": "Churam",
+      "kind": "village",
+      "offset_m": 1473.6,
+      "km": 411.5
+    },
+    {
+      "name": "Chuchot Yokma",
+      "kind": "village",
+      "offset_m": 68.5,
+      "km": 415.1
+    }
+  ],
+  "demo_gpx_km": [
+    119.6,
+    154.4
+  ],
+  "winter_shade": {
+    "15 Jan 08:30 IST": {
+      "shaded_fraction": 0.561,
+      "shaded_and_above_3000m_km": 214.8
+    },
+    "15 Jan 12:00 IST": {
+      "shaded_fraction": 0.041,
+      "shaded_and_above_3000m_km": 15.9
+    },
+    "15 Jan 15:30 IST": {
+      "shaded_fraction": 0.244,
+      "shaded_and_above_3000m_km": 90.2
+    }
+  },
+  "db_kb": 1280
+}

@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.ipynb_checkpoints/
+
+# ML artefacts (large; publish via Releases / Kaggle instead)
+ml/data/
+ml/runs/
+terrain/data/
+*.h5
+*.keras
+*.tflite
+!android/app/src/main/assets/*.tflite
+
+dist/
+
+# Android / Gradle
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/keystore.properties
+android/.idea/
+android/captures/
+android/.kotlin/
+*.iml
+*.apk
+*.aab
+*.jks
+*.keystore
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/

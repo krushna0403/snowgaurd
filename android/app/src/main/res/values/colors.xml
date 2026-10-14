@@ -1,0 +1,18 @@
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="scrim">#B3000000</color>
+    <color name="text_secondary">#FFB0BEC5</color>
+
+    <color name="band_green">#FF2E7D32</color>
+    <color name="band_amber">#FFFFA000</color>
+    <color name="band_red">#FFD50000</color>
+    <color name="band_unknown">#FF546E7A</color>
+    <color name="status_pending">#FF455A64</color>
+    <color name="roi_outline">#CCFFFFFF</color>
+    <color name="risk_high_bg">#E6420000</color>
+    <color name="severity_advisory">#FF1565C0</color>
+
+    <color name="brand_ice">#FF4FC3F7</color>
+    <color name="brand_night">#FF0D1B2A</color>
+</resources>

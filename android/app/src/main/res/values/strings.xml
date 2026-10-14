@@ -1,0 +1,133 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">SnowGuard</string>
+
+    <string name="status_camera_starting">Camera…</string>
+    <string name="status_camera_ok">Camera OK</string>
+    <string name="status_camera_denied">Camera denied</string>
+    <string name="status_camera_error">Camera error</string>
+    <string name="status_model_none">No model</string>
+    <string name="status_model_int8">Model INT8</string>
+    <string name="status_model_fp32">Model FP32</string>
+    <string name="status_model_int8w">Model INT8-W</string>
+    <string name="status_gps_none">GPS off</string>
+    <string name="status_gps_denied">GPS denied</string>
+    <string name="status_gps_waiting">GPS…</string>
+    <string name="status_gps_fix">GPS ±%1$d m</string>
+    <string name="status_gps_demo">DEMO %1$s</string>
+    <string name="status_gps_off_route">Off route</string>
+    <string name="status_no_route">No route</string>
+
+    <string name="terrain_waiting">Terrain: waiting for GPS fix</string>
+    <string name="terrain_no_route">Terrain: route database missing</string>
+    <string name="terrain_off_route">Off the Manali–Leh corridor — terrain checks paused</string>
+    <string name="terrain_km">km %1$.1f</string>
+    <string name="terrain_elev">%1$d m</string>
+    <string name="terrain_sun">sun %1$.0f° az %2$.0f° hz %3$.0f°</string>
+    <string name="terrain_sunlit">Sunlit</string>
+    <string name="terrain_shaded">Shaded %1$s</string>
+    <string name="terrain_tunnel">Tunnel</string>
+    <string name="terrain_night">Night</string>
+    <string name="terrain_north">north-facing</string>
+    <string name="terrain_risk_none">Freeze risk: low</string>
+    <string name="terrain_risk_elevated">Freeze risk: ELEVATED</string>
+    <string name="terrain_risk_high">Freeze risk: HIGH</string>
+    <string name="terrain_threshold">%1$s ≥ %2$d m</string>
+    <string name="terrain_landmark_ahead">%1$s in %2$.1f km</string>
+    <string name="terrain_landmark_behind">%1$s %2$.1f km behind</string>
+    <string name="terrain_landmark_here">at %1$s</string>
+
+    <string name="surface_placeholder">—</string>
+    <string name="confidence_placeholder">--%</string>
+    <string name="confidence_value">%1$d%%</string>
+    <string name="action_waiting">Point the camera at the road ahead</string>
+    <string name="action_no_model">Model failed to load — terrain-only mode</string>
+    <string name="action_low_confidence">Not sure — keep the road inside the box</string>
+
+    <string name="surface_dry">DRY</string>
+    <string name="surface_wet">WET</string>
+    <string name="surface_water">WATER</string>
+    <string name="surface_fresh_snow">SNOW</string>
+    <string name="surface_melted_snow">SLUSH</string>
+    <string name="surface_ice">ICE</string>
+
+    <string name="action_dry">Good grip</string>
+    <string name="action_wet">Wet road — watch for ice in shade</string>
+    <string name="action_water">Standing water — slow down</string>
+    <string name="action_fresh_snow">Snow — slow down, gentle inputs</string>
+    <string name="action_melted_snow">Slush — reduce speed</string>
+    <string name="action_ice">Ice — slow down, no sudden braking</string>
+
+    <string name="severity_none">Clear</string>
+    <string name="severity_advisory">ADVISORY</string>
+    <string name="severity_warning">WARNING</string>
+    <string name="severity_critical">CRITICAL</string>
+    <string name="hazard_ice">Ice</string>
+    <string name="hazard_snow">Snow</string>
+    <string name="hazard_slush">Slush</string>
+    <string name="hazard_water">Standing water</string>
+    <string name="hazard_black_ice">Possible black ice</string>
+    <string name="hazard_freeze_zone">Shaded freeze zone</string>
+    <string name="alert_banner">%1$s · %2$s</string>
+    <string name="alert_sources">%1$s</string>
+    <string name="source_both">camera + terrain</string>
+    <string name="source_camera">camera</string>
+    <string name="source_terrain">terrain</string>
+    <string name="mode_terrain_only">Camera unavailable — terrain-only alerts</string>
+    <string name="mode_vision_only">GPS unavailable — camera-only alerts</string>
+
+    <string name="notif_channel">SnowGuard monitoring</string>
+    <string name="notif_title">SnowGuard is watching the road</string>
+    <string name="notif_clear">No hazards detected</string>
+    <string name="notif_stop">Stop</string>
+    <string name="status_gps_lost">GPS lost</string>
+
+    <string name="settings">Settings</string>
+    <string name="settings_language">Voice language</string>
+    <string name="settings_lang_en">English</string>
+    <string name="settings_lang_hi">हिंदी (Hindi)</string>
+    <string name="settings_volume">Alert volume</string>
+    <string name="settings_sensitivity">Camera sensitivity</string>
+    <string name="settings_sens_low">Low (5 of 6 frames)</string>
+    <string name="settings_sens_normal">Normal (4 of 6)</string>
+    <string name="settings_sens_high">High (3 of 6)</string>
+    <string name="settings_fusion">Fusion mode</string>
+    <string name="settings_fusion_tiered">Tiered (recommended)</string>
+    <string name="settings_fusion_or">OR gate (ablation baseline)</string>
+    <string name="settings_voice">Voice prompts</string>
+    <string name="settings_vibration">Vibration</string>
+    <string name="settings_test">Test alert</string>
+    <string name="settings_done">Done</string>
+    <string name="settings_hindi_missing">Hindi voice data is not installed; using English. Install it in Android Settings → Text-to-speech.</string>
+    <string name="disclaimer">Advisory aid only — the driver remains responsible.</string>
+
+    <!-- Voice prompts; Hindi versions in values-hi. -->
+    <string name="voice_ice">Ice ahead. Slow down, no sudden braking.</string>
+    <string name="voice_snow">Snow on the road. Slow down.</string>
+    <string name="voice_slush">Slush ahead. Reduce speed.</string>
+    <string name="voice_water">Standing water. Slow down.</string>
+    <string name="voice_black_ice">Danger. Wet road in freezing shade. Possible black ice.</string>
+    <string name="voice_freeze_zone">Shaded freeze zone. Watch for ice.</string>
+    <string name="voice_critical_prefix">Danger.</string>
+    <string name="voice_freeze_ahead">Shaded freeze zone in %1$d metres.</string>
+    <string name="voice_corner_ahead">Shaded blind corner in %1$d metres. Slow down.</string>
+
+    <string name="hazard_freeze_ahead">Freeze zone ahead</string>
+    <string name="hazard_corner_ahead">Shaded corner ahead</string>
+    <string name="alert_banner_distance">%1$s · %2$s · %3$d m</string>
+    <string name="lookahead_zone">▲ Freeze zone in %1$d m</string>
+    <string name="lookahead_corner">▲ Shaded blind corner in %1$d m</string>
+
+    <string name="camera_dark">Camera unreliable — too dark</string>
+    <string name="camera_glare">Camera unreliable — glare</string>
+    <string name="camera_blurred">Camera unreliable — lens fogged or blurred</string>
+    <string name="mode_camera_unreliable">%1$s · terrain-only alerts</string>
+
+    <string name="settings_share_log">Share last trip log</string>
+    <string name="share_log_title">SnowGuard trip log</string>
+    <string name="share_log_none">No trip log yet</string>
+    <string name="settings_demo_start">Demo drive: 15 Jan 08:30, km 120–154 (×4 speed)</string>
+    <string name="settings_demo_stop">Stop demo drive</string>
+    <string name="demo_route_loading">Route not loaded yet</string>
+
+    <string name="debug_frame">cam %1$.1f fps  infer %2$.1f fps  %3$.1f ms  %4$dx%5$d  luma %6$.0f</string>
+</resources>
