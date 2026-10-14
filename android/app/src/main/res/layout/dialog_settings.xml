@@ -94,6 +94,28 @@
                 android:text="@string/settings_fusion_or" />
         </RadioGroup>
 
+        <TextView
+            style="@style/SettingsHeader"
+            android:text="@string/settings_model" />
+
+        <RadioGroup
+            android:id="@+id/model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/modelInt8w"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_model_int8w" />
+
+            <RadioButton
+                android:id="@+id/modelFp16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_model_fp16" />
+        </RadioGroup>
+
         <com.google.android.material.materialswitch.MaterialSwitch
             android:id="@+id/voice"
             android:layout_width="match_parent"

@@ -96,21 +96,9 @@ class MainActivity : AppCompatActivity() {
         settings = AppSettings(this)
         analysisExecutor = Executors.newSingleThreadExecutor()
 
-        classifier = SurfaceClassifier.create(this)
-        val model = classifier
-        if (model != null) {
-            setStatus(binding.chipModel, Status.OK, getString(
-                when (model.quantization) {
-                    "int8" -> R.string.status_model_int8
-                    "dynamic_int8" -> R.string.status_model_int8w
-                    else -> R.string.status_model_fp32
-                }
-            ))
-        } else {
-            setStatus(binding.chipModel, Status.ERROR, getString(R.string.status_model_none))
-        }
+        loadModel()
         setStatus(binding.chipGps, Status.PENDING, getString(R.string.status_gps_none))
-        showSurfacePlaceholder(if (model == null) R.string.action_no_model else R.string.action_waiting)
+        showSurfacePlaceholder(if (classifier == null) R.string.action_no_model else R.string.action_waiting)
         showTerrainMessage(R.string.terrain_waiting)
         binding.chipSettings.setOnClickListener { showSettings() }
 
@@ -143,6 +131,34 @@ class MainActivity : AppCompatActivity() {
         val model = classifier
         analysisExecutor.execute { model?.close() }
         analysisExecutor.shutdown()
+    }
+
+    private fun loadModel() {
+        val variant = settings.modelVariant
+        val model = SurfaceClassifier.create(this, variant.asset, variant.quantization)
+            ?: SurfaceClassifier.create(this).takeIf { variant != ModelVariant.INT8W }
+        classifier = model
+        if (model != null) {
+            setStatus(binding.chipModel, Status.OK, getString(
+                when (model.quantization) {
+                    "int8" -> R.string.status_model_int8
+                    "dynamic_int8" -> R.string.status_model_int8w
+                    "fp16" -> R.string.status_model_fp16
+                    else -> R.string.status_model_fp32
+                }
+            ))
+        } else {
+            setStatus(binding.chipModel, Status.ERROR, getString(R.string.status_model_none))
+        }
+    }
+
+    /** Swaps the classifier and rebinds the camera so the new analyzer uses it. */
+    private fun switchModel() {
+        val old = classifier
+        loadModel()
+        shownSurface = null
+        if (isGranted(Manifest.permission.CAMERA)) startCamera()
+        analysisExecutor.execute { old?.close() }
     }
 
     private fun startGuardService() {
@@ -442,8 +458,14 @@ class MainActivity : AppCompatActivity() {
         d.fusion.check(if (settings.fusionMode == FusionMode.OR_GATE) R.id.fusionOr else R.id.fusionTiered)
         d.voice.isChecked = settings.voiceEnabled
         d.vibration.isChecked = settings.vibrationEnabled
+        d.model.check(if (settings.modelVariant == ModelVariant.FP16) R.id.modelFp16 else R.id.modelInt8w)
 
         fun save() {
+            val variant = if (d.model.checkedRadioButtonId == R.id.modelFp16) ModelVariant.FP16 else ModelVariant.INT8W
+            if (variant != settings.modelVariant) {
+                settings.modelVariant = variant
+                switchModel()
+            }
             settings.language = if (d.language.checkedRadioButtonId == R.id.langHi) "hi" else "en"
             settings.volume = d.volume.progress / 10f
             settings.sensitivity = when (d.sensitivity.checkedRadioButtonId) {

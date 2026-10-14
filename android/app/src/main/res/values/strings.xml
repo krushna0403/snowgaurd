@@ -9,6 +9,10 @@
     <string name="status_model_int8">Model INT8</string>
     <string name="status_model_fp32">Model FP32</string>
     <string name="status_model_int8w">Model INT8-W</string>
+    <string name="status_model_fp16">Model FP16</string>
+    <string name="settings_model">Model</string>
+    <string name="settings_model_int8w">INT8-W (2.4 MB, best ice recall)</string>
+    <string name="settings_model_fp16">FP16 (4.3 MB, often faster)</string>
     <string name="status_gps_none">GPS off</string>
     <string name="status_gps_denied">GPS denied</string>
     <string name="status_gps_waiting">GPS…</string>
@@ -73,7 +77,7 @@
     <string name="source_camera">camera</string>
     <string name="source_terrain">terrain</string>
     <string name="mode_terrain_only">Camera unavailable — terrain-only alerts</string>
-    <string name="mode_vision_only">GPS unavailable — camera-only alerts</string>
+    <string name="mode_vision_only">No terrain data (off route or no GPS) — camera-only alerts</string>
 
     <string name="notif_channel">SnowGuard monitoring</string>
     <string name="notif_title">SnowGuard is watching the road</string>

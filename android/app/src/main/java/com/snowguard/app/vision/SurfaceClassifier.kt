@@ -136,8 +136,13 @@ class SurfaceClassifier private constructor(
                 ?.takeIf { it.size == numClasses && it.any { b -> b != 0f } }
 
         /** Returns null if the model is missing or fails to load (app falls back to terrain-only). */
-        fun create(context: Context, threads: Int = 4): SurfaceClassifier? = try {
-            val buffer = context.assets.openFd(MODEL_ASSET).use { fd ->
+        fun create(
+            context: Context,
+            asset: String = MODEL_ASSET,
+            quantization: String? = null,
+            threads: Int = 4,
+        ): SurfaceClassifier? = try {
+            val buffer = context.assets.openFd(asset).use { fd ->
                 FileInputStream(fd.fileDescriptor).channel.use { ch ->
                     ch.map(FileChannel.MapMode.READ_ONLY, fd.startOffset, fd.declaredLength)
                 }
@@ -147,7 +152,9 @@ class SurfaceClassifier private constructor(
             val labels = loadLabels(context)
             SurfaceClassifier(
                 interpreter, quantized, classBias(labels, SurfaceClass.entries.size),
-                labels?.optString("quantization")?.takeIf { it.isNotEmpty() } ?: if (quantized) "int8" else "fp32",
+                quantization
+                    ?: labels?.optString("quantization")?.takeIf { it.isNotEmpty() }
+                    ?: if (quantized) "int8" else "fp32",
             )
         } catch (e: Exception) {
             Log.e(TAG, "Model load failed", e)

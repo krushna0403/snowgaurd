@@ -318,6 +318,7 @@ def main(argv: list[str] | None = None) -> None:
         for stale in assets.glob("snowguard_mnv2*.tflite"):
             stale.unlink()
         shutil.copy(out / MODEL_NAME, assets / MODEL_NAME)
+        shutil.copy(out / "snowguard_mnv2_fp16.tflite", assets / "snowguard_mnv2_fp16.tflite")  # in-app alternative
         shutil.copy(out / "labels.json", assets / "labels.json")
         print(f"[export] copied model + labels to {assets}")
 

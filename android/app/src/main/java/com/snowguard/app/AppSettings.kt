@@ -5,6 +5,13 @@ import com.snowguard.app.fusion.FusionMode
 
 enum class Sensitivity(val raiseK: Int) { LOW(5), NORMAL(4), HIGH(3) }
 
+/** On-device model choice; latency of the two differs a lot between phones. */
+enum class ModelVariant(val asset: String, val quantization: String?) {
+    /** INT8 weights, float activations; quantization label comes from labels.json. */
+    INT8W("snowguard_mnv2.tflite", null),
+    FP16("snowguard_mnv2_fp16.tflite", "fp16"),
+}
+
 /** FR-U5: persisted user settings (language, alert volume, sensitivity). */
 class AppSettings(context: Context) {
     private val prefs = context.applicationContext.getSharedPreferences("snowguard", Context.MODE_PRIVATE)
@@ -33,6 +40,10 @@ class AppSettings(context: Context) {
         get() = prefs.getBoolean(KEY_VIBRATION, true)
         set(v) = prefs.edit().putBoolean(KEY_VIBRATION, v).apply()
 
+    var modelVariant: ModelVariant
+        get() = enumOr(prefs.getString(KEY_MODEL, null), ModelVariant.INT8W)
+        set(v) = prefs.edit().putString(KEY_MODEL, v.name).apply()
+
     private inline fun <reified T : Enum<T>> enumOr(name: String?, default: T): T =
         name?.let { n -> enumValues<T>().firstOrNull { it.name == n } } ?: default
 
@@ -43,5 +54,6 @@ class AppSettings(context: Context) {
         const val KEY_FUSION = "fusion_mode"
         const val KEY_VOICE = "voice"
         const val KEY_VIBRATION = "vibration"
+        const val KEY_MODEL = "model_variant"
     }
 }
