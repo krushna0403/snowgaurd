@@ -93,9 +93,27 @@ accuracy is within 2 points of float32. Full-integer INT8 lost 4.9 points
 (mostly fresh snow → ice and dry/wet confusions), so the app uses dynamic-range
 INT8, which loses 1.2 points and has the best ice recall of all variants.
 
-A per-class logit bias was also tuned on the validation set. It raised test
-accuracy by 0.5 points but lowered ice recall from 86.7% to 81.1%, so it is
-**not** applied (`class_bias` is all zeros in `labels.json`).
+## Class bias (field calibration)
+
+The app multiplies each class probability by `exp(bias)` and renormalises. Two
+bias settings were tried:
+
+1. **Tuned on the validation set** by the export script. It raised test accuracy
+   by 0.5 points but lowered ice recall from 86.7% to 81.1%, so it was rejected.
+2. **Hand-tuned from phone field tests (shipped).** On a real phone, dry roads were
+   often read as wet or standing water, and filmed footage as water (see Limitations).
+   To cut these false alarms, `labels.json` ships with:
+
+   | dry | wet | water | fresh_snow | melted_snow | ice |
+   |---|---|---|---|---|---|
+   | +1.5 | −1.0 | −1.5 | −0.3 | −0.3 | 0.0 |
+
+   In phone tests this clearly reduced false wet/water readings. The trade-off is
+   that hazards the model is unsure about now lean towards "dry": real wet, water,
+   snow and slush are detected less often, and more ice may be read as dry. The
+   test-set figures above are **without** this bias; its effect on test accuracy
+   and ice recall has not yet been measured. Set all values to 0 in `labels.json`
+   to restore the evaluated behaviour.
 
 ## Deviations from targets
 
@@ -107,10 +125,13 @@ as dry or wet, is 4.8%.
 
 ## Limitations and risks
 
-- **Domain shift.** RSCD was captured on Chinese roads with a fixed vehicle camera.
-  Himalayan roads, a phone behind a dirty or fogged windscreen, low winter sun and
-  snow glare all differ. Expect lower accuracy in the field until the model is
-  fine-tuned on local footage.
+- **Domain shift (measured).** RSCD was captured on Chinese roads with a fixed
+  vehicle camera. In phone tests, a dry Indian road under overcast light was read
+  as wet (81–88%), dry road footage filmed off a laptop screen as standing water
+  (up to 100%), and a Ladakh motovlog as water (51–95%). Smooth, dark, low-texture
+  road surfaces look like RSCD's water images. The shipped class bias reduces this
+  but does not remove it; fine-tuning on real phone and dashcam footage of these
+  roads is the proper fix.
 - **Black ice** is visually wet road. The model cannot see it; SnowGuard raises it
   only when the camera sees wet road inside a terrain-predicted shaded freeze zone.
 - **Correlated errors.** Misclassifications persist across nearby frames, so

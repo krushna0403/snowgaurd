@@ -88,6 +88,11 @@ are in the [model card](ml/MODEL_CARD.md).
 The BRD target of 85% accuracy is not met. The gap is almost entirely dry ↔ wet ↔
 water confusion; hazard-level recall (any hazard class versus dry or wet) is 95.3%.
 
+These figures are without class bias. Phone field tests showed dry roads being
+read as wet or water, so the app ships with a hand-tuned bias towards dry (see
+the [model card](ml/MODEL_CARD.md#class-bias-field-calibration)). This reduces
+false alarms at the cost of some sensitivity to real hazards.
+
 ### Terrain engine
 
 | | |
@@ -209,8 +214,10 @@ docs/       Figures and reports referenced by this README and the model card
   as a terrain Advisory. Black ice in unexpected places (melt-water refreezing on
   a sunlit bend) can be missed.
 - **Domain shift.** The model was trained on RSCD, recorded on Chinese roads with
-  a vehicle camera. Accuracy on Himalayan roads through a phone behind a windscreen
-  has not been measured and is likely lower.
+  a vehicle camera. In phone tests it read dry road as wet or standing water,
+  especially in flat light and on footage filmed off a screen. A hand-tuned class
+  bias reduces this, at the cost of detecting real wet, water and snow less
+  readily. Fine-tuning on real phone footage is the proper fix.
 - **Accuracy below target.** 82.7% against the 85% target; see the model card.
 - **False alarms.** If camera errors persist over several frames, the ablation
   suggests up to about 7 false vision alerts per 10 km on sunlit dry road.
